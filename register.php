@@ -82,30 +82,29 @@ try {
     <head>
         <meta charset="UTF-8">
         <title>Registration Successful</title>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
         <link href="style/style.css" rel="stylesheet">
-        
     </head>
     <body>
         <div id="nav-placeholder"></div>
 
-    <script src="nav.js"></script>
+        <script src="nav.js"></script>
         <section style="min-height: 100vh; display: flex; align-items: center; justify-content: center;">
           <div class="container">
             <div class="form-container">
               <div class="success-message">
-                <div class="success-icon">✓</div>
+                <div class="success-icon"><i class="fas fa-check-circle"></i></div>
                 <h2 class="section-title" style="font-size:2.5rem">Registration Successful!</h2>
                 <p class="section-subtitle">Thank you for registering! You'll receive your merchandise info via email soon.</p>
                 <a href="index.html" class="btn btn-secondary" style="width: 100%; display: flex; align-items: center; justify-content: center; gap: 8px;">
-                    <span>←</span>
+                    <i class="fas fa-arrow-left"></i>
                     Back to Home
                 </a>
               </div>
             </div>
           </div>
         </section>
-        
-        
     </body>
     </html>
     <?php

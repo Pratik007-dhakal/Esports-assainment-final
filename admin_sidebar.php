@@ -6,7 +6,7 @@
 <aside class="admin-sidebar">
     <div class="admin-sidebar-header">
         <h2>ESL ADMIN</h2>
-        <i class="fas fa-gamepad gaming-icon"></i> 
+        <i class="fas fa-gamepad gaming-icon"></i>
     </div>
 
     <nav class="admin-sidebar-nav">
@@ -15,13 +15,13 @@
             <span>Dashboard</span>
         </a>
        
-        <a href="view_participants_edit_delete.php" 
+        <a href="view_participants_edit_delete.php"
             class="admin-nav-link <?php echo (in_array(basename($_SERVER['PHP_SELF']), ['view_participants_edit_delete.php', 'edit_participant_form.php', 'edit_participant.php','delete_confirmation.php','delete.php'])) ? 'active' : ''; ?>">
             <i class="fas fa-users"></i>
             <span>Participants</span>
         </a>
 
-        <a href="search_form.php" 
+        <a href="search_form.php"
         class="admin-nav-link <?php echo (in_array(basename($_SERVER['PHP_SELF']), ['search_form.php', 'search_result.php'])) ? 'active' : ''; ?>">
             <i class="fas fa-search"></i>
             <span>Search & Analytics</span>
@@ -40,11 +40,11 @@
         </a>
     </nav>
 
-    <div class="admin-sidebar-footer" >
-        <div class="user-info" >
+    <div class="admin-sidebar-footer">
+        <div class="user-info">
             <a href="logout.php" class="admin-nav-link">
                 <i class="fas fa-sign-out-alt signout"></i>
-                <span class="logout-text">Logout, 
+                <span class="logout-text">Logout,
                     <span class="username">
                         <?php echo htmlspecialchars($_SESSION['admin_username']); ?>
                     </span>

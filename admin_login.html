@@ -5,220 +5,29 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>PUBG Mobile Admin Login - UK E-Sports League</title>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap"
-    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link href="style/style.css" rel="stylesheet" />
-
-  <style>
-    :root {
-      --pubg-yellow: #f8c025;
-      --pubg-yellow-strong: #ffcc00;
-      --pubg-dark: #0b0e13;
-      --pubg-gray: #1a1f29;
-      --pubg-accent: #7fc8ff;
-    }
-
-    /* Fullscreen background video */
-    #bg-video {
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      min-width: 100%;
-      min-height: 100%;
-      width: auto;
-      height: auto;
-      z-index: -2;
-      transform: translate(-50%, -50%);
-      filter: saturate(1.1) contrast(1.05) brightness(0.8);
-      object-fit: cover;
-      background: #000;
-    }
-
-    /* Dark overlay to improve text contrast */
-    .video-overlay {
-      position: fixed;
-      inset: 0;
-      background: radial-gradient(1200px 800px at 50% 30%, rgba(0,0,0,0.2), rgba(0,0,0,0.85) 70%), linear-gradient(180deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.85) 100%);
-      z-index: -1;
-      pointer-events: none;
-    }
-
-    body {
-      background-color: var(--pubg-dark);
-      color: #e7edf5;
-      font-family: 'Rajdhani', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-    }
-
-    .section {
-      padding: 48px 16px;
-    }
-
-    .login-container {
-      max-width: 520px;
-      margin: 48px auto;
-      background: linear-gradient(180deg, rgba(26,31,41,0.85), rgba(11,14,19,0.85));
-      border: 1px solid rgba(248,192,37,0.25);
-      box-shadow: 0 12px 40px rgba(0,0,0,0.6), inset 0 0 0 1px rgba(255,255,255,0.02);
-      border-radius: 14px;
-      backdrop-filter: blur(6px);
-    }
-
-    .form-container {
-      padding: 28px 24px 32px;
-    }
-
-    .text-center h1 {
-      font-family: 'Orbitron', sans-serif;
-      letter-spacing: 2px;
-      color: var(--pubg-yellow);
-      font-weight: 900;
-      margin: 0 0 6px;
-      text-shadow: 0 2px 0 rgba(0,0,0,0.5);
-    }
-
-    .text-center p {
-      margin: 0;
-      color: #c7d0db;
-      font-weight: 500;
-    }
-
-    .form-group { margin-bottom: 16px; }
-
-    .form-label {
-      display: block;
-      margin-bottom: 8px;
-      font-weight: 700;
-      color: #e7edf5;
-      letter-spacing: 1px;
-    }
-
-    .form-label span { color: var(--pubg-yellow-strong); margin-right: 6px; }
-
-    .form-control {
-      width: 100%;
-      border: 1px solid rgba(255,255,255,0.1);
-      background: rgba(10,12,16,0.85);
-      color: #e7edf5;
-      padding: 12px 14px;
-      border-radius: 10px;
-      outline: none;
-      transition: border-color 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    .form-control:focus {
-      border-color: var(--pubg-yellow);
-      box-shadow: 0 0 0 3px rgba(248,192,37,0.15);
-    }
-
-    .password-input-container {
-      position: relative;
-      display: flex;
-      align-items: stretch;
-    }
-
-    .password-input-container .form-control { padding-right: 44px; }
-
-    .password-toggle {
-      position: absolute;
-      top: 50%;
-      right: 10px;
-      transform: translateY(-50%);
-      width: 34px;
-      height: 34px;
-      border-radius: 8px;
-      border: 1px solid rgba(255,255,255,0.1);
-      background: rgba(255,255,255,0.06);
-      color: #e7edf5;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      transition: background 0.2s ease, border-color 0.2s ease;
-    }
-
-    .password-toggle:hover { background: rgba(255,255,255,0.12); border-color: rgba(255,255,255,0.2); }
-
-    .btn-pubg {
-      width: 100%;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      padding: 12px 16px;
-      font-weight: 800;
-      letter-spacing: 1px;
-      font-family: 'Orbitron', sans-serif;
-      color: #0b0e13;
-      background: linear-gradient(180deg, var(--pubg-yellow-strong), var(--pubg-yellow));
-      border: 2px solid #3b2b00;
-      border-bottom-width: 4px;
-      border-radius: 12px;
-      text-transform: uppercase;
-      cursor: pointer;
-      text-shadow: none;
-      box-shadow: 0 10px 22px rgba(248,192,37,0.25);
-      transition: transform 0.06s ease, box-shadow 0.15s ease, filter 0.15s ease;
-    }
-
-    .btn-pubg:hover { filter: brightness(1.05); box-shadow: 0 14px 26px rgba(248,192,37,0.3); }
-    .btn-pubg:active { transform: translateY(1px); }
-
-    .btn-pubg .icon {
-      display: inline-flex;
-      width: 18px;
-      height: 18px;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .demo-credentials {
-      color: #c7d0db;
-    }
-
-    /* Subtle top HUD line accents */
-    .login-container::before, .login-container::after {
-      content: "";
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 60%;
-      height: 1px;
-      background: linear-gradient(90deg, rgba(127,200,255,0), rgba(127,200,255,0.6), rgba(127,200,255,0));
-    }
-    .login-container { position: relative; }
-    .login-container::before { top: -6px; }
-    .login-container::after { bottom: -6px; }
-
-    @media (max-width: 560px) {
-      .form-container { padding: 22px 16px 26px; }
-      .login-container { margin: 28px auto; }
-    }
-  </style>
-
 </head>
 
 <body>
-  <video id="bg-video" autoplay muted loop playsinline poster="https://images.pexels.com/photos/799443/pexels-photo-799443.jpeg">
-    <source src="https://videos.pexels.com/video-files/3290965/3290965-uhd_2560_1440_25fps.mp4" type="video/mp4" />
-  </video>
-  <div class="video-overlay"></div>
   <div id="nav-placeholder"></div>
 
   <script src="nav.js"></script>
-  <section class="section">
+  
+  <div class="login-container">
     <div class="container">
       <div class="login-container">
         <div class="form-container">
           <div class="text-center mb-4">
-            <h1>🪖 PUBG COMMAND CENTER</h1>
+            <h1><i class="fas fa-shield-alt"></i> PUBG COMMAND CENTER</h1>
             <p>Secure access to the battleground control of UK E-Sports League</p>
           </div>
 
           <form action="login.php" method="POST" novalidate>
             <div class="form-group">
               <label for="username" class="form-label">
-                <span>🎯</span> Commander ID
+                <i class="fas fa-user"></i> Commander ID
               </label>
               <input required class="form-control bg-white text-dark" type="text" name="username" id="username"
                 value="admin" />
@@ -226,33 +35,33 @@
 
             <div class="form-group">
               <label for="password" class="form-label">
-                <span>🔐</span> Access Code
+                <i class="fas fa-lock"></i> Access Code
               </label>
               <div class="password-input-container">
                 <input required class="form-control bg-white text-dark" type="password" name="password" id="password"
                   value="password123" />
                 <button type="button" class="password-toggle" id="passwordToggle">
-                  🔍
+                  <i class="fas fa-eye"></i>
                 </button>
               </div>
             </div>
 
-            <button type="submit" class="btn-pubg">
-              <span class="icon">🎮</span>
+            <button type="submit" class="btn btn-primary w-100">
+              <i class="fas fa-gamepad"></i>
               Enter Command Center
             </button>
           </form>
 
           <div class="demo-credentials mt-4 text-center">
             <small>
-              🎮 Demo credentials are pre-filled 🎮<br />
+              <i class="fas fa-info-circle"></i> Demo credentials are pre-filled<br />
               Commander ID: admin | Access Code: password123
             </small>
           </div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
 
   <script>
     // Toggle password visibility
@@ -262,10 +71,10 @@
         const passwordInput = document.getElementById("password");
         if (passwordInput.type === "password") {
           passwordInput.type = "text";
-          this.textContent = "🔐";
+          this.innerHTML = '<i class="fas fa-eye-slash"></i>';
         } else {
           passwordInput.type = "password";
-          this.textContent = "🔍";
+          this.innerHTML = '<i class="fas fa-eye"></i>';
         }
       });
 
@@ -276,7 +85,7 @@
 
       if (!username.value.trim() || !password.value.trim()) {
         e.preventDefault();
-        alert("⚠️ Please complete all battle credentials ⚠️");
+        alert("Please complete all battle credentials");
         return;
       }
     });
