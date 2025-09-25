@@ -96,7 +96,7 @@ try {
               <div class="success-message">
                 <div class="success-icon"><i class="fas fa-check-circle"></i></div>
                 <h2 class="section-title" style="font-size:2.5rem">Registration Successful!</h2>
-                <p class="section-subtitle">Thank you for registering! You'll receive your merchandise info via email soon.</p>
+                <p class="section-subtitle">Thank you for registering! You'll receive tournament information and merchandise details via email soon.</p>
                 <a href="index.html" class="btn btn-secondary" style="width: 100%; display: flex; align-items: center; justify-content: center; gap: 8px;">
                     <i class="fas fa-arrow-left"></i>
                     Back to Home

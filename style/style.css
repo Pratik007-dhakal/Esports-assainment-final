@@ -1,24 +1,24 @@
-/* Modern Black and White Theme CSS */
+/* Modern Professional Theme CSS */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
 :root {
   /* Color Palette */
-  --primary: #000000;
-  --secondary: #333333;
-  --accent: #666666;
-  --success: #28a745;
-  --warning: #ffc107;
-  --error: #dc3545;
-  --info: #17a2b8;
-  --dark: #000000;
-  --darker: #000000;
-  --gray: #f8f9fa;
-  --light-gray: #e9ecef;
+  --primary: #2563eb;
+  --secondary: #1e40af;
+  --accent: #3b82f6;
+  --success: #10b981;
+  --warning: #f59e0b;
+  --error: #ef4444;
+  --info: #06b6d4;
+  --dark: #1f2937;
+  --darker: #111827;
+  --gray: #f8fafc;
+  --light-gray: #e2e8f0;
   --white: #ffffff;
-  --text-dark: #212529;
-  --text-light: #6c757d;
-  --text-muted: #868e96;
-  --border: #dee2e6;
+  --text-dark: #1f2937;
+  --text-light: #64748b;
+  --text-muted: #94a3b8;
+  --border: #e2e8f0;
   --shadow: rgba(0, 0, 0, 0.1);
   --shadow-lg: rgba(0, 0, 0, 0.15);
 }
@@ -32,7 +32,7 @@
 
 body {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
   color: var(--text-dark);
   line-height: 1.6;
   overflow-x: hidden;
@@ -180,8 +180,8 @@ body {
 }
 
 .btn-danger:hover {
-  background: #c82333;
-  border-color: #c82333;
+  background: #dc2626;
+  border-color: #dc2626;
   color: var(--white);
 }
 
@@ -255,6 +255,7 @@ body {
   text-align: center;
   margin-bottom: 1rem;
   letter-spacing: -0.02em;
+  position: relative;
 }
 
 .section-title::after {
@@ -453,7 +454,7 @@ body {
 .form-control:focus {
   outline: none;
   border-color: var(--primary);
-  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
 }
 
 .form-control::placeholder {
@@ -471,6 +472,29 @@ body {
   width: 18px;
   height: 18px;
   accent-color: var(--primary);
+}
+
+/* Password Toggle */
+.password-input-container {
+  position: relative;
+}
+
+.password-toggle {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: var(--primary);
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+}
+
+.password-toggle:hover {
+  color: var(--secondary);
+  transform: translateY(-50%) scale(1.1);
 }
 
 /* Success Message */
@@ -561,7 +585,7 @@ body {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(37, 99, 235, 0.8);
   border: none;
   color: white;
   font-size: 1.5rem;
@@ -605,6 +629,13 @@ body {
 
 .carousel-indicator.active {
   background: white;
+}
+
+/* Live Stream Section */
+.live-stream {
+  background: var(--gray);
+  padding: 5rem 0;
+  position: relative;
 }
 
 /* Team Cards */
@@ -1023,28 +1054,28 @@ body {
 }
 
 .alert-success {
-  background: #d4edda;
-  border-color: #c3e6cb;
-  color: #155724;
+  background: #dcfce7;
+  border-color: #bbf7d0;
+  color: #166534;
 }
 
 .alert-error,
 .alert-danger {
-  background: #f8d7da;
-  border-color: #f5c6cb;
-  color: #721c24;
+  background: #fef2f2;
+  border-color: #fecaca;
+  color: #991b1b;
 }
 
 .alert-warning {
-  background: #fff3cd;
-  border-color: #ffeaa7;
-  color: #856404;
+  background: #fefce8;
+  border-color: #fef3c7;
+  color: #92400e;
 }
 
 .alert-info {
-  background: #d1ecf1;
-  border-color: #bee5eb;
-  color: #0c5460;
+  background: #ecfeff;
+  border-color: #cffafe;
+  color: #155e75;
 }
 
 .alert-secondary {
@@ -1094,6 +1125,11 @@ body {
   justify-content: center;
   padding: 2rem 0;
   background: var(--gray);
+}
+
+/* Form Actions */
+.form-actions {
+  margin-top: 2rem;
 }
 
 /* Utility Classes */
